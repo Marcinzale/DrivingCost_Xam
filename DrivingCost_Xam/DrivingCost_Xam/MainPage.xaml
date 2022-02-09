@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="DrivingCost_Xam.MainPage">
+
+    <StackLayout>
+
+        <Frame BackgroundColor="DarkOrange" Padding="24" CornerRadius="0">
+            <Label Text="DRIVING COST" HorizontalTextAlignment="Center" TextColor="WhiteSmoke" FontSize="36"/>
+        </Frame>
+        <Label Text="Calculate your driving cost" FontSize="Title" HorizontalTextAlignment="Center" Padding="20"/>
+
+        <StackLayout Padding="18">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Enter fuel price (PLN):" />
+                <Entry x:Name="EntryFuelPrice" Keyboard="Numeric" Placeholder="Enter fuel price (PLN)" TextChanged="EntryFuelPrice_TextChanged" FontSize="Large" MaxLength="4">
+                    <!--<Entry.Behaviors>
+                        <xct:NumericValidationBehavior                    
+                         MinimumValue="1.0"
+                         MaximumValue="6.0"   
+                         MaximumDecimalPlaces="4"
+                         />
+
+                    </Entry.Behaviors>-->
+                </Entry>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Enter fuel consumption (L):" />
+                <Entry x:Name="EntryFuelConsumption" Keyboard="Numeric" Placeholder="Enter fuel consumption (L)" TextChanged="EntryFuelCons_TextChanged" FontSize="Large" MaxLength="4"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Route length: (Km)" />
+                <Entry x:Name="EntryRouteLength" TextChanged="EntryRouteLength_TextChanged" Keyboard="Numeric" Placeholder="Route length (Km)" FontSize="Large" MaxLength="5"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Button x:Name="btnCalculate" IsEnabled="False" Clicked="Button_Clicked" Text="CALCULATE" TextColor="White" FontSize="Large" BackgroundColor="CadetBlue" Margin="30"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="lbl_Result" HorizontalOptions="Center" Text="Cost" FontSize="40" TextColor="Gray"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Button x:Name="btnClear" Clicked="ButtonClicked" Text="CLEAR" IsEnabled="False" TextColor="White" FontSize="Large" BackgroundColor="Gray" Margin="30"/>
+            </StackLayout>
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
